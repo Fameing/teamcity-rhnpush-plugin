@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>rhnpush-plugin</name>
+    <display-name>teamcity-rhnpush-plugin</display-name>
+    <version>@Version@</version>
+    <description>This plugin adds a post-build step to push RPMs to Spacewalk or RHN satellite server.</description>
+    <download-url>https://github.com/Fameing/teamcity-rhnpush-plugin</download-url>
+    <email>Igor.Yova@gmail.com</email>
+      <vendor>
+          <name>Miltrex</name>
+          <url>http://miltrex.com.ua</url>
+      </vendor>
+  </info>
+  <deployment use-separate-classloader="false"/>
+</teamcity-plugin>
