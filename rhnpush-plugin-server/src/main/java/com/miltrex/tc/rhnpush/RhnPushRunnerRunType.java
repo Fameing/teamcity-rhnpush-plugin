@@ -57,6 +57,8 @@ public class RhnPushRunnerRunType extends RunType {
         sb.append("Channel: ");
         sb.append(parameters.get(PluginConstants.PROPERTY_CHANNEL));
         sb.append(" \n");
+        sb.append("Artifact paths: ");
+        sb.append(parameters.get(PluginConstants.PROPERTY_PARAM_SOURCE_PATH));
         sb.append("Non-GPG signed: ");
         sb.append(parameters.get(PluginConstants.PROPERTY_NOGPG) == null ? "false" : "true");
         sb.append(" \n");

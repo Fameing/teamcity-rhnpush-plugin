@@ -1,24 +1,29 @@
 package com.miltrex.tc.rhnpush;
 
-import jetbrains.buildServer.agent.BuildProgressLogger;
-import jetbrains.buildServer.util.StringUtil;
-import org.apache.commons.io.FileUtils;
+import com.sun.org.omg.SendingContext._CodeBaseImplBase;
+import jetbrains.buildServer.agent.*;
+import jetbrains.buildServer.agent.impl.artifacts.ArtifactsBuilder;
+import jetbrains.buildServer.agent.impl.artifacts.ArtifactsBuilderAdapter;
+import jetbrains.buildServer.agent.impl.artifacts.ArtifactsCollection;
+import jetbrains.buildServer.ExtensionHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 public class RhnPushRunner {
-    final RhnPushRunnerConfiguration configuration;
-    final BuildProgressLogger logger;
+    private RhnPushRunnerConfiguration configuration;
+    private BuildProgressLogger logger;
+    private ExtensionHolder extensionHolder;
 
-    RhnPushRunner(RhnPushRunnerConfiguration configuration,@NotNull final BuildProgressLogger logger) {
-        this.configuration = configuration;
+    public RhnPushRunner(RhnPushRunnerConfiguration config, BuildProgressLogger logger, ExtensionHolder extensionHolder) {
+        this.configuration = config;
         this.logger = logger;
+        this.extensionHolder = extensionHolder;
     }
-
 
     /**
      * @return executable name/path
@@ -54,15 +59,20 @@ public class RhnPushRunner {
         return args;
     }
 
-    public List<String> getRPMPath() {
+    private List<String> getRPMPath() {
         List<String> stringFile = new ArrayList<String>();
-        Collection collection = FileUtils.listFiles(new File(configuration.buildPath), new String[]{"rpm"}, true);
-        for (Object next : collection) {
-            if (((File)next).exists() && ((File)next).canRead()){
-                stringFile.add(StringUtil.escapeQuotes(((File)next).toURI().normalize().getPath()));
-                logger.message("[RhnPush] - Found file '" + ((File)next).toURI().normalize().getPath() + "'");
-            } else {
-                logger.warning("[RhnPush] - File '" + ((File)next).toURI().normalize().getPath() + "' not exist or cannot reads.");
+        final Collection<ArtifactsPreprocessor> preprocessors = extensionHolder.getExtensions(ArtifactsPreprocessor.class);
+        final ArtifactsBuilder builder = new ArtifactsBuilder();
+        builder.setPreprocessors(preprocessors);
+        builder.setBaseDir(configuration.checkoutDirectory);
+        builder.setArtifactsPaths(configuration.param_source_path);
+        builder.addListener(new ArtifactsBuilderAdapter());
+        final List<ArtifactsCollection> artifactsCollections = builder.build();
+        for (ArtifactsCollection artifactsCollection : artifactsCollections) {
+            for (Map.Entry<File, String> filePathEntry : artifactsCollection.getFilePathMap().entrySet()) {
+                File source = filePathEntry.getKey();
+                stringFile.add(source.toURI().normalize().getPath());
+                logger.message("[RhnPush] - Found file '" + source.toURI().normalize().getPath() + "'");
             }
         }
         return stringFile;

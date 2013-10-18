@@ -1,5 +1,6 @@
 package com.miltrex.tc.rhnpush;
 
+import jetbrains.buildServer.ExtensionHolder;
 import jetbrains.buildServer.RunBuildException;
 import jetbrains.buildServer.agent.BuildFinishedStatus;
 import jetbrains.buildServer.agent.BuildProgressLogger;
@@ -13,15 +14,17 @@ import java.util.List;
 
 public class RhnPushRunnerBuildService extends BuildServiceAdapter {
     private RhnPushRunner rhnPushRunner;
+    private ExtensionHolder extensionHolder;
 
-    public RhnPushRunnerBuildService() {
-
+    public RhnPushRunnerBuildService(@NotNull final ExtensionHolder extensionHolder) {
+        this.extensionHolder = extensionHolder;
     }
 
     @Override
     public void afterInitialized() {
-        rhnPushRunner = new RhnPushRunner(getConfig(), getLogger());
+        rhnPushRunner = new RhnPushRunner(getConfig(), getLogger(), extensionHolder);
     }
+
 
     @NotNull
     @Override

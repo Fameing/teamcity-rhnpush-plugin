@@ -12,6 +12,13 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.jetbrains.teamcity.internal</groupId>
+            <artifactId>agent</artifactId>
+            <version>${teamcity-version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.miltrex.tc</groupId>
             <artifactId>rhnpush-plugin-common</artifactId>
             <version>1.0-SNAPSHOT</version>

@@ -14,6 +14,7 @@ public interface PluginConstants {
     final String PROPERTY_CHANNEL = "rhnpush.channel";
     final String PROPERTY_NOGPG = "rhnpush.nogpg";
     final String PROPERTY_VERBOSE = "rhnpush.verbose";
+    final String PROPERTY_PARAM_SOURCE_PATH = "rhnpush.param_source_path";
 
     final String RUN_TYPE = "buildServerResources";
     final String RUNNER_DISPLAY_NAME = "RhnPush";

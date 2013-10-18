@@ -11,16 +11,16 @@ import java.io.File;
 import java.io.IOException;
 
 public class RhnPushRunnerBuildServiceFactory implements CommandLineBuildServiceFactory {
+    private RhnPushRunnerBuildService rhnPushRunnerBuildService;
 
-    public RhnPushRunnerBuildServiceFactory() {
-
+    public RhnPushRunnerBuildServiceFactory(@NotNull final RhnPushRunnerBuildService rhnPushRunnerBuildService) {
+           this.rhnPushRunnerBuildService = rhnPushRunnerBuildService;
     }
 
     @NotNull
     public CommandLineBuildService createService() {
-        return new RhnPushRunnerBuildService();
+        return rhnPushRunnerBuildService;
     }
-
 
     @NotNull
     public AgentBuildRunnerInfo getBuildRunnerInfo() {
@@ -57,6 +57,7 @@ public class RhnPushRunnerBuildServiceFactory implements CommandLineBuildService
 
     public boolean isExistRhnPush() {
         try {
+
             Process process = Runtime.getRuntime().exec("which rhnpush");
             return process.waitFor() <= 0;
         } catch (InterruptedException e) {

@@ -5,4 +5,5 @@
 <beans default-autowire="constructor">
     <bean id="rhnPushRunnerAgentListener" class="com.miltrex.tc.rhnpush.AgentListener"/>
     <bean id="rhnPushRunnerBuildServiceFactory" class="com.miltrex.tc.rhnpush.RhnPushRunnerBuildServiceFactory"/>
+    <bean id="rhnPushRunnerBuildService" class="com.miltrex.tc.rhnpush.RhnPushRunnerBuildService"/>
 </beans>
