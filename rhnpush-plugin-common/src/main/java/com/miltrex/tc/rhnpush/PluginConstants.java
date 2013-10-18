@@ -1,11 +1,5 @@
 package com.miltrex.tc.rhnpush;
 
-import java.util.Arrays;
-import java.util.List;
-
-/**
- * Created by Igor.Yova on 15.10.13.
- */
 public interface PluginConstants {
     final String PROPERTY_RHNPUSH_PATH = "rhnpush.path";
     final String PROPERTY_SERVER = "rhnpush.server";

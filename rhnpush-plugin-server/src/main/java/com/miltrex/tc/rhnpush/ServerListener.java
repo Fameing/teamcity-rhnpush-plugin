@@ -7,9 +7,6 @@ import jetbrains.buildServer.serverSide.SBuildServer;
 import jetbrains.buildServer.util.EventDispatcher;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by Igor.Yova on 15.10.13.
- */
 public class ServerListener extends BuildServerAdapter {
     private SBuildServer myServer;
 

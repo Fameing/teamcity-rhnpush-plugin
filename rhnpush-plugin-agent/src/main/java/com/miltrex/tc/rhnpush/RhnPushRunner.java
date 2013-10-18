@@ -1,6 +1,5 @@
 package com.miltrex.tc.rhnpush;
 
-import com.sun.org.omg.SendingContext._CodeBaseImplBase;
 import jetbrains.buildServer.agent.*;
 import jetbrains.buildServer.agent.impl.artifacts.ArtifactsBuilder;
 import jetbrains.buildServer.agent.impl.artifacts.ArtifactsBuilderAdapter;

@@ -11,9 +11,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by Igor.Yova on 15.10.13.
- */
 public class RhnPushRunnerRunType extends RunType {
     private PluginDescriptor pluginDescriptor;
 

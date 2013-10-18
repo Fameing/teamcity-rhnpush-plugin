@@ -2,14 +2,10 @@ package com.miltrex.tc.rhnpush;
 
 import jetbrains.buildServer.ExtensionHolder;
 import jetbrains.buildServer.RunBuildException;
-import jetbrains.buildServer.agent.BuildFinishedStatus;
-import jetbrains.buildServer.agent.BuildProgressLogger;
 import jetbrains.buildServer.agent.runner.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class RhnPushRunnerBuildService extends BuildServiceAdapter {
