@@ -9,26 +9,26 @@
 <l:settingsGroup title="Satellite server configuration">
     <forms:workingDirectory />
 
-<%--    <tr>
-        <th>
-            <label for="rhnpush.path">Execute rhnpush path: </label>
-        </th>
-        <td>
-            <props:textProperty name="rhnpush.path" className="longField"/>
-            <span class="error" id="error_hnpush.path"></span>
-        <span class="smallNote">
-             Execute bin path to rhnpush.
-        </span>
-        </td>
-    </tr>--%>
+    <%--    <tr>
+            <th>
+                <label for="rhnpush.path">Execute rhnpush path: </label>
+            </th>
+            <td>
+                <props:textProperty name="rhnpush.path" className="longField"/>
+                <span class="error" id="error_hnpush.path"></span>
+            <span class="smallNote">
+                 Execute bin path to rhnpush.
+            </span>
+            </td>
+        </tr>--%>
 
     <tr>
         <th>
-            <label for="<%=PluginConstants.PROPERTY_SERVER%>">Host name: </label>
+            <label for="rhnpush.server">Host name: </label>
         </th>
         <td>
-            <props:textProperty name="<%=PluginConstants.PROPERTY_SERVER%>" className="longField"/>
-            <span class="error" id="error_<%=PluginConstants.PROPERTY_SERVER%>"></span>
+            <props:textProperty name="rhnpush.server" className="longField"/>
+            <span class="error" id="error_rhnpush.server"></span>
              <span class="smallNote">
                  The satellite server to publish these RPMs to.
              </span>
@@ -37,11 +37,11 @@
 
     <tr>
         <th>
-            <label for="<%=PluginConstants.PROPERTY_USERNAME%>">Username: </label>
+            <label for="rhnpush.username">Username: </label>
         </th>
         <td>
-            <props:textProperty name="<%=PluginConstants.PROPERTY_USERNAME%>" className="longField"/>
-            <span class="error" id="error_<%=PluginConstants.PROPERTY_USERNAME%>"></span>
+            <props:textProperty name="rhnpush.username" className="longField"/>
+            <span class="error" id="error_rhnpush.username"></span>
             <span class="smallNote">
                  The username to authenticate to the satellite server as.
             </span>
@@ -50,11 +50,11 @@
 
     <tr>
         <th>
-            <label for="<%=PluginConstants.PROPERTY_PASSWORD%>">Password: </label>
+            <label for="rhnpush.password">Password: </label>
         </th>
         <td>
-            <props:passwordProperty name="<%=PluginConstants.PROPERTY_PASSWORD%>" className="longField"/>
-            <span class="error" id="error_<%=PluginConstants.PROPERTY_PASSWORD%>"></span>
+            <props:passwordProperty name="rhnpush.password" className="longField"/>
+            <span class="error" id="error_rhnpush.password"></span>
             <span class="smallNote">
                  The password to authenticate to the satellite server with.
             </span>
@@ -63,11 +63,11 @@
 
     <tr>
         <th>
-            <label for="<%=PluginConstants.PROPERTY_CHANNEL%>">Channel: </label>
+            <label for="rhnpush.channel">Channel: </label>
         </th>
         <td>
-            <props:textProperty name="<%=PluginConstants.PROPERTY_CHANNEL%>" className="longField"/>
-            <span class="error" id="error_<%=PluginConstants.PROPERTY_CHANNEL%>"></span>
+            <props:textProperty name="rhnpush.channel" className="longField"/>
+            <span class="error" id="error_rhnpush.channel"></span>
             <span class="smallNote">
                  Comma separated list of channel names.
             </span>
@@ -78,7 +78,7 @@
     <tr>
         <th><label for="jetbrains.buildServer.deployer.sourcePath">Artifacts path: </label></th>
         <td>
-            <props:multilineProperty name="<%=PluginConstants.PROPERTY_PARAM_SOURCE_PATH%>" className="longField" cols="30" rows="4" expanded="true" linkTitle="Enter artifacts paths"/>
+            <props:multilineProperty name="rhnpush.param_source_path" className="longField" cols="30" rows="4" expanded="true" linkTitle="Enter artifacts paths"/>
             <span class="smallNote">New line or comma separated paths to build artifacts. Ant-style wildcards like dir/**/*.rpm and target directories like *.rpm => winFiles,unix/distro.rpm => linuxFiles, where winFiles and linuxFiles are target directories are supported.
             <bs:help file="Configuring+General+Settings" anchor="artifactPaths"/></span>
         </td>
@@ -87,11 +87,11 @@
 <l:settingsGroup title="Additional configuration">
     <tr>
         <th>
-            <label for="<%=PluginConstants.PROPERTY_NOGPG%>">Deploy non-GPG signed artifacts: </label>
+            <label for="rhnpush.nogpg">Deploy non-GPG signed artifacts: </label>
         </th>
         <td>
-            <props:checkboxProperty name="<%=PluginConstants.PROPERTY_NOGPG%>"/>
-            <span class="error" id="error_<%=PluginConstants.PROPERTY_NOGPG%>"></span>
+            <props:checkboxProperty name="rhnpush.nogpg"/>
+            <span class="error" id="error_rhnpush.nogpg"></span>
             <span class="smallNote">
                  Deploy even if artifacts are not GPG signed.
             </span>
@@ -99,11 +99,11 @@
     <tr>
     <tr>
         <th>
-            <label for="<%=PluginConstants.PROPERTY_VERBOSE%>">Verbose: </label>
+            <label for="rhnpush.verbose">Verbose: </label>
         </th>
         <td>
-            <props:checkboxProperty name="<%=PluginConstants.PROPERTY_VERBOSE%>" />
-            <span class="error" id="error_<%=PluginConstants.PROPERTY_VERBOSE%>"></span>
+            <props:checkboxProperty name="rhnpush.verbose" />
+            <span class="error" id="error_rhnpush.verbose"></span>
             <span class="smallNote">
                  Increase verbosity
             </span>

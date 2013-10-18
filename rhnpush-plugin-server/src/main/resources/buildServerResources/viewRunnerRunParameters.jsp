@@ -10,30 +10,30 @@
 </div>--%>
 
 <div class="parameter">
-    Host name: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_SERVER%>" /></strong>
+    Host name: <strong><props:displayValue name="rhnpush.server" /></strong>
 </div>
 
 <div class="parameter">
-    Username: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_USERNAME%>" /></strong>
+    Username: <strong><props:displayValue name="rhnpush.username" /></strong>
 </div>
 
 <div class="parameter">
-    Password: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_PASSWORD%>" /></strong>
+    Password: <strong><props:displayValue name="rhnpush.password" /></strong>
 </div>
 
 <div class="parameter">
-    Channel: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_CHANNEL%>" /></strong>
+    Channel: <strong><props:displayValue name="rhnpush.channel" /></strong>
 </div>
 
 <div class="parameter">
-    Source: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_PARAM_SOURCE_PATH%>" emptyValue="none"/></strong>
+    Source: <strong><props:displayValue name="rhnpush.param_source_path" emptyValue="none"/></strong>
 </div>
 
 <div class="parameter">
-    Deploy non-GPG signed artifacts: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_NOGPG%>" /></strong>
+    Deploy non-GPG signed artifacts: <strong><props:displayValue name="rhnpush.nogpg" /></strong>
 </div>
 
 <div class="parameter">
-    Verbose: <strong><props:displayValue name="<%=PluginConstants.PROPERTY_VERBOSE%>" /></strong>
+    Verbose: <strong><props:displayValue name="rhnpush.verbose" /></strong>
 </div>
 
