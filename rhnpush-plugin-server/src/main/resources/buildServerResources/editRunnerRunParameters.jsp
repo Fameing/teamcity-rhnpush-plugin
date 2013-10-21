@@ -79,6 +79,7 @@
         <th><label for="jetbrains.buildServer.deployer.sourcePath">Artifacts path: </label></th>
         <td>
             <props:multilineProperty name="rhnpush.param_source_path" className="longField" cols="30" rows="4" expanded="true" linkTitle="Enter artifacts paths"/>
+            <span class="error" id="error_param_source_path"></span>
             <span class="smallNote">New line or comma separated paths to build artifacts. Ant-style wildcards like dir/**/*.rpm and target directories like *.rpm => winFiles,unix/distro.rpm => linuxFiles, where winFiles and linuxFiles are target directories are supported.
             <bs:help file="Configuring+General+Settings" anchor="artifactPaths"/></span>
         </td>

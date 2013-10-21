@@ -92,6 +92,10 @@ public class RhnPushRunnerRunType extends RunType {
                     result.add(new InvalidProperty(PluginConstants.PROPERTY_CHANNEL, "Channel can not be empty"));
                 }
 
+                if (PropertiesUtil.isEmptyOrNull(properties.get(PluginConstants.PROPERTY_PARAM_SOURCE_PATH))) {
+                    result.add(new InvalidProperty(PluginConstants.PROPERTY_PARAM_SOURCE_PATH, "Artifacts path can not be empty"));
+                }
+
                 return result;
             }
         };
